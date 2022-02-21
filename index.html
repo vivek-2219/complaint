@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIR - Complaint</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .btn {
+            padding: 12px 12px;
+            font-size: 23px;
+            border: 2px solid black;
+            border-radius: 7px;
+            background-color: rgb(103, 103, 238);
+            color: white;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <button class="btn" id="play">Play Unboxing Call Record</button>
+            <button class="btn" id="pause">Pause Unboxing Call Record</button>
+            <button class="btn" id="playComplaint">Play Complaint Call Record</button>
+            <button class="btn" id="pauseComplaint">Pause Complaint Call Record</button>
+        </div>
+
+        <div class="video">
+            <video width="640" height="480" autoplay muted>
+                <source src="Unboxing Video.mp4" type="video/mp4">
+                <source src="Unboxing Video.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <strong style="font-size: 23px;">Unboxing Video</strong>
+        </div>
+        
+    </div>
+    <script>
+        let play = document.getElementById('play');
+        let pause = document.getElementById('pause');
+        let playComplaint = document.getElementById('playComplaint');
+        let pauseComplaint = document.getElementById('pauseComplaint');
+        let unbox = new Audio('UnboxingAudio.mp3');
+        let complaint = new Audio('ComplaintAudio.mp3');
+        play.addEventListener('click', () => {
+            unbox.play();
+            unbox.currentTime = 0;
+        })
+        pause.addEventListener('click', () => {
+            unbox.pause();
+        })
+        playComplaint.addEventListener('click', () => {
+            complaint.play();
+            complaint.currentTime = 0;
+        })
+        pauseComplayComplaint.addEventListener('click', () => {
+            complaint.pause();
+        })
+    </script>
+</body>
+
+</html>
